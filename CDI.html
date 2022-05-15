@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+	<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <title>Proyecto</title>
 </head>
 <body>
@@ -24,11 +28,12 @@
 
   	<div class="section-center">
         <section id="contenedor">
-  		    <h2 class="mb-0">Clasificador de Imágenes</h2>
-          
-                <p>xd</p>
+  		    <h2 class="mb-0 title-inside">Clasificador de Imágenes</h2>
+				<!-- <canvas class="webcam" id="canvas"></canvas> -->
+				<video class="webcam" id="video_frame" playsinline autoplay></video>
+                <p class="texto-inside">Texto para escribir cualquier cosa</p>
         </section>
   	</div>
 
+	<script src="LoadCamera.js"></script>
 </body>
-</html>
