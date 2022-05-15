@@ -205,7 +205,6 @@ h1{
 .nav ul li a{
   font-family: 'Montserrat', sans-serif;
   font-size: 9vh;
-  text-transform: uppercase;
   line-height: 1.2;
   font-weight: 800;
   display: inline-block;
@@ -297,4 +296,15 @@ h1{
     font-size: 8vh;
   }
 }
+a {
+  text-decoration: none;
+}
 
+#contenedor{
+	background-color: #353746;
+	max-width: 1000px;
+	width: 100%;
+	margin: 20px auto;
+	box-shadow: 3px 3px 7px #191919;
+  border-radius: 20px;
+}
