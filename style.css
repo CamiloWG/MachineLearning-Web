@@ -310,3 +310,15 @@ a {
   border-radius: 20px;
 }
 
+.webcam {
+  width: 80%;
+  height: 60%;
+}
+
+.title-inside {
+  padding-top: 15px;
+}
+
+.texto-inside {
+  padding-bottom: 15px;
+}
