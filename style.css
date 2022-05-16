@@ -308,6 +308,7 @@ a {
 	box-shadow: 3px 3px 7px #191919;
   border-radius: 20px;
 }
+
 #contenedor2{
 	background-color: #353746;
   padding: 3px;
@@ -317,4 +318,18 @@ a {
 	margin: 20px auto;
 	box-shadow: 3px 3px 7px #191919;
   border-radius: 20px;
+
+
+.webcam {
+  width: 80%;
+  height: 60%;
+}
+
+.title-inside {
+  padding-top: 15px;
+}
+
+.texto-inside {
+  padding-bottom: 15px;
+
 }
