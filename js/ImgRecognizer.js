@@ -48,6 +48,15 @@ async function loop() {
     window.requestAnimationFrame(loop);
 }
 
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
+
 // run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
@@ -78,6 +87,7 @@ async function predict() {
         }
         console.log(prediction[i].className + ": " + prediction[i].probability.toFixed(2) * 100);
         console.log("Another Run: " + i);
+        sleep(500)
         //labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 }
