@@ -2,6 +2,15 @@
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
 // the link to your model provided by Teachable Machine export panel
+
+const BarCamilo = document.getElementById("BarCamilo");
+const BarNicolas = document.getElementById("BarNicolas");
+const BarValu = document.getElementById("BarValu");
+const BarPaula = document.getElementById("BarPaula");
+const BarLaura = document.getElementById("BarLaura");
+
+
+
 const URL = "./model/img/";
 
 let model, webcam, labelContainer, maxPredictions;
@@ -45,9 +54,28 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions; i++) {
         
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        console.log(classPrediction);
+        switch (prediction[i].className) {
+            case "Valuwu":
+                BarValu.style.width = prediction[i].probability.toFixed(2) * 100;
+                break;
+            
+            case "Palis":
+                BarPaula.style.width = prediction[i].probability.toFixed(2) * 100;
+                break;
+            
+            case "Lauwu":
+                BarLaura.style.width = prediction[i].probability.toFixed(2) * 100;
+                break;
+            
+            case "Nicopro":
+                BarNicolas.style.width = prediction[i].probability.toFixed(2) * 100;
+                break;
+            
+            case "Camilin":
+                BarCamilo.style.width = prediction[i].probability.toFixed(2) * 100;
+                break;
+            
+        }
         //labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 }
