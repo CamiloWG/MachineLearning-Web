@@ -302,9 +302,7 @@ a {
 
 #contenedor{
   justify-content: center;
-
-  align-items: center;
-
+  align-items: center;;
   text-align: center;
 	background-color: #353746;
 	max-width: 1000px;
