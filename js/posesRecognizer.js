@@ -2,6 +2,15 @@
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
 // the link to your model provided by Teachable Machine export panel
+
+
+const firstBar = document.getElementById("firstBar");
+const secondBar = document.getElementById("secondBar");
+const thirdBar = document.getElementById("thirdBar");
+const fourthBar = document.getElementById("fourthBar");
+const lastBar = document.getElementById("lastBar");
+
+
 const URL = "./model/poses/";
 
 let model, webcam, labelContainer, maxPredictions;
@@ -33,6 +42,16 @@ async function init() {
     // }
 }
 
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
+
+
 async function loop() {
     webcam.update(); // update the webcam frame
     await predict();
@@ -44,10 +63,33 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        let predictionAmount = prediction[i].probability.toFixed(2) * 100;
+        switch (prediction[i].className) {
+            case "Valuwu":
+                BarValu.style.width = `${predictionAmount}%`;
+                break;
+            
+            case "Palis":
+                BarPaula.style.width = `${predictionAmount}%`;
+                break;
+            
+            case "Lauwu":
+                BarLaura.style.width = `${predictionAmount}%`;
+                break;
+            
+            case "Nicopro":
+                BarNicolas.style.width = `${predictionAmount}%`;
+                break;
+            
+            case "Camilin":
+                BarCamilo.style.width = `${predictionAmount}%`;
+                break;
+            
+        }
+        console.log(prediction[i].className + ": " + prediction[i].probability.toFixed(2) * 100);
+        console.log("Another Run: " + i);
+        sleep(500)
         //labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 }
-
 init()
