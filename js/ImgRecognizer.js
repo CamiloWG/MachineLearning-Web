@@ -62,26 +62,26 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions; i++) {
-        
+        let predictionAmount = prediction[i].probability.toFixed(2) * 100;
         switch (prediction[i].className) {
             case "Valuwu":
-                BarValu.style.width = prediction[i].probability.toFixed(2) * 100;
+                BarValu.style.width = `${predictionAmount}%`;
                 break;
             
             case "Palis":
-                BarPaula.style.width = prediction[i].probability.toFixed(2) * 100;
+                BarPaula.style.width = `${predictionAmount}%`;
                 break;
             
             case "Lauwu":
-                BarLaura.style.width = prediction[i].probability.toFixed(2) * 100;
+                BarLaura.style.width = `${predictionAmount}%`;
                 break;
             
             case "Nicopro":
-                BarNicolas.style.width = prediction[i].probability.toFixed(2) * 100;
+                BarNicolas.style.width = `${predictionAmount}%`;
                 break;
             
             case "Camilin":
-                BarCamilo.style.width = prediction[i].probability.toFixed(2) * 100;
+                BarCamilo.style.width = `${predictionAmount}%`;
                 break;
             
         }
