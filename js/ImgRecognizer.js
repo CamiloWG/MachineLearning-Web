@@ -85,9 +85,6 @@ async function predict() {
                 break;
             
         }
-        console.log(prediction[i].className + ": " + prediction[i].probability.toFixed(2) * 100);
-        console.log("Another Run: " + i);
-        sleep(500)
         //labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 }
