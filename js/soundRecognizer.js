@@ -3,7 +3,7 @@
 
 // the link to your model provided by Teachable Machine export panel
 
-const button = document.getElementById("btn");
+const button = document.getElementById("btnStart");
 
 const URL = "./model/sound/";
 
