@@ -5,7 +5,7 @@
 
 const button = document.getElementById("btnStart");
 
-const URL = "./model/sound/";
+const URL = "https://camilowg.github.io/MachineLearning-Web/model/sound/";
 
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
