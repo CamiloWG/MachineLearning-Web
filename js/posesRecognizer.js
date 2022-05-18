@@ -27,7 +27,7 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
     // Convenience function to setup a webcam
-    const size = 300;
+    const size = 600;
     const flip = true; // whether to flip the webcam
     webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
     await webcam.setup(); // request access to the webcam
@@ -39,10 +39,6 @@ async function init() {
     canvas.width = size; 
     canvas.height = size;
     ctx = canvas.getContext("2d");
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
-    }
 }
 
 function sleep(milliseconds) {
@@ -71,24 +67,24 @@ async function predict() {
     for (let i = 0; i < maxPredictions; i++) {
         let predictionAmount = prediction[i].probability.toFixed(2) * 100;
         switch (prediction[i].className) {
-            case "Valuwu":
-                BarValu.style.width = `${predictionAmount}%`;
+            case "Pose 1":
+                firstBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Palis":
-                BarPaula.style.width = `${predictionAmount}%`;
+            case "Pose 2":
+                secondBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Lauwu":
-                BarLaura.style.width = `${predictionAmount}%`;
+            case "Pose 3":
+                thirdBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Nicopro":
-                BarNicolas.style.width = `${predictionAmount}%`;
+            case "Pose 4":
+                fourthBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Camilin":
-                BarCamilo.style.width = `${predictionAmount}%`;
+            case "Pose 5":
+                lastBar.style.width = `${predictionAmount}%`;
                 break;
             
         }
