@@ -132,3 +132,19 @@ progress {
     width: 30%;
     float: left;
 }
+
+.bg-extra-one {
+  --bs-bg-opacity: 1;
+    background-color: #bdbfbf !important;
+}
+
+.bg-extra-two {
+  --bs-bg-opacity: 1;
+    background-color: #caacf9 !important;
+}
+
+.bg-extra-three {
+  --bs-bg-opacity: 1;
+    background-color: #ecd6c0 !important;
+}
+

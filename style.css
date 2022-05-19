@@ -324,6 +324,11 @@ a {
   border-radius: 20px;
 }
 
+/* .names-container {
+  height: 150px;
+  width: 100%;
+} */
+
 .webcam {
   display: inline-block;
   margin: 25px;
@@ -351,4 +356,62 @@ a {
   border-radius: 20px;
   padding-bottom: 17px;
   padding-right: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+/* body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background:#fff;
+} */
+.btn-s{
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+.btn-s a{
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+.btn-s a:before,
+.btn-s a:after{
+  position: absolute;
+  content: "SONIDO";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #c5c6c8;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.btn-s a:before{
+  color: #fff;
+  background: #c5c6c8;
+  transform: rotateY(0deg) translateZ(25px);
+}
+.btn-s a:after{
+  color: #fff;
+  transform: rotateX(90deg) translateZ(25px);
+}
+.btn-s a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+
+.bar-container {
+  padding: 15px;
 }
