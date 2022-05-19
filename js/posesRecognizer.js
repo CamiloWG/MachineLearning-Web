@@ -67,11 +67,11 @@ async function predict() {
     for (let i = 0; i < maxPredictions; i++) {
         let predictionAmount = prediction[i].probability.toFixed(2) * 100;
         switch (prediction[i].className) {
-            case "Pose 1 ":
+            case "Pose 1":
                 firstBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Pose 2 ":
+            case "Pose 2":
                 secondBar.style.width = `${predictionAmount}%`;
                 break;
             
@@ -83,7 +83,7 @@ async function predict() {
                 fourthBar.style.width = `${predictionAmount}%`;
                 break;
             
-            case "Pose 5 ":
+            case "Pose 5":
                 lastBar.style.width = `${predictionAmount}%`;
                 break;
             

@@ -23,7 +23,8 @@
 		</ul>
 	</nav>
 
-  	<div class="section-center">
+  	<div class="">
+        
         <h1 class="mb-0">Redes Neuronales</h1>
         <section id="contenedor">
             <h2 class="mb-0 title-inside">Análisis del funcionamiento de una red neuronal<br> (Utilizando el framework Scikit Learn)</h2>
@@ -33,13 +34,152 @@
         </section>
 
         <section id="contenedor">
-            <h2>Componentes de las Redes Neuronales</h2>
-            <article class="texto1">
-                <p>Las redes están conformadas por 3 elementos principales : neuronas, pesos y bias.</p> 
-            </article>
-            <img src="img/unknown.png" width="300">
+            <h2 class="title-inside">Componentes de las Redes Neuronales</h2>
+
+                <p>Las redes están conformadas por 3 elementos principales: neuronas, pesos y bias.</p> 
+
+            <img src="sources/redNeuronal">
+            <br><br>
+        </section>
+
+        <section id="contenedor">
+            <h2 class="title-inside">Funcionamiento</h2>
+            <p class="texto-inside">
+                Las redes neuronales artificiales comienzan asignando valores aleatorios a los pesos de las conexiones entre neuronas. La clave para que la red neuronal realice su tarea de forma correcta y precisa es ajustar estos pesos a los números adecuados. Pero encontrar los pesos adecuados no es muy fácil, sobre todo cuando se trata de múltiples capas y miles de neuronas.
+
+Esta calibración se realiza entrenando la red con ejemplos anotados. Por ejemplo, si se quiere entrenar un clasificador de imágenes, se le proporcionan múltiples fotos, cada una etiquetada con su clase correspondiente (persona, auto o animal). A medida que le proporcionas más y más ejemplos de entrenamiento, la red neuronal ajusta gradualmente sus pesos para asignar cada entrada a las salidas correctas.
+
+De igual manera cada que la red reajusta todos sus pesos se conoce como época y es una iteración en la cual se debe de repetirse cientos o miles de veces hasta que sea necesario y cada neurona cuente con los pesos adecuados.
+
+            </p>
+            <img src="sources/funcionamiento.png">
+            <br><br>
+        </section>
+
+        <section id="contenedor">
+            <h2 class="mb-0 title-inside">Scikit Learn</h2>
+                <p class="texto-inside">Es probablemente la librería más útil para Machine Learning en Python, es de código abierto y es reutilizable en varios contextos, fomentando el uso académico y comercial. Proporciona una gama de algoritmos de aprendizaje supervisados y no supervisados en Python. </p>
+                <h2>Incluye:</h2>
+                <ul>
+                    <li><b>NumPy:</b> librería de matriz n-dimensional base</li>
+                    <li><b>Pandas:</b> estructura de datos y análisis</li>
+                    <li><b>SciPy:</b> librería fundamental para la informática científica</li>
+                    <li><b>Ipython:</b> consola interactiva mejorada</li>
+                    <li><b>SymPy:</b> matemática simbólica</li>
+                </ul>
+        </section>
+        <section id="contenedor">
+            <h2 class="mb-0 title-inside">RED NEURONAL (METROS A PULGADAS)</h2>
+            <span><h3>Paso 1.</h3>Se importan las librerías que se van a usar</span>
+            <ul>
+                <li><b>NumPy:</b> arreglos numéricos</li>
+                <li><b>Tensorflow:</b> librería para inteligencia artificial hecha por google</li>
+            </ul>
+            <img src="sources/imgFirstStep.png">
         </section>
         
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 2.</h3>Se declara un arreglo de números donde se ponen las 7 entradas de metros, luego se crea otro arreglo con los resultados en pulgadas (ejemplos que la red usará para aprender)
+                    Se utiliza el framework keras que permite hacer redes neuronales de manera simple (ahorra líneas de código)
+                    se pueden especificar las capas de entrada y de salida de la red neuronal o solo especificar la de salida.
+                </span>
+            </div>
+            <img src="sources/imgSecondStep.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 3.</h3>
+                    Se crea una variable llamada capa y se inicia como una capa de tipo densa tf.keras.layers.Dense y se le indica las unidades o neuronas de la capa. Aparte se usa la variable input_shape donde se especifica que tenemos una entrada con una neurona también 
+Las capas densas son las que tienen conexiones desde cada neurona hacia todas la neuronas de la siguiente capa.
+                </span>
+            </div>
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 4.</h3>
+                    Se inserta el modelo secuencial de keras tf.keras.Sequential y se le indica la capa que se creó anteriormente.
+                </span>
+            </div>
+            <img src="sources/imgFourthStep.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 5.</h3>
+                    Luego se compila el modelo (modelo.compile), es decir que prepara el modelo para ser entrenado y se le asigna dos propiedades para que procese las matemáticas del modelo para que aprenda mejor
+                </span>
+                <ul>
+                    <li><b>Optimizador (optimizer):</b> Se usa el optimizador llamado Adam que le permite a la red saber cómo ajustar los pesos y sesgos de manera eficiente y se le indica un valor numérico que es la tasa de aprendizaje (tf.keras.optimizers.Adam(0.1)), que le dice que tanto ajustar los pesos y los sesgos.</li>
+                    <li><b>Funcion de perdida (loss):</b> Se usa 'mean_squared_error' (error cuadrático medio) y considera que una poca cantidad de errores grandes es peor que una gran cantidad de errores pequeños.</li>
+                </ul>
+            </div>
+            <img src="sources/imgFiveStep.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 6.</h3>
+                    Se entrena el modelo usando la función .fit y se le indica los datos de entrada y resultados esperados (metros y pulgadas ) y  se le indica la cantidad de veces se quiere que lo intente o entrene. Además se pone verbose=false para que no imprima mucho sobre el entrenamiento y se imprime si ya se entreno o no.
+                </span>
+                
+            </div>
+            <img src="sources/imgSixStep.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 7.</h3>
+                    Antes de ver la predicción, se ven los resultados de la función de pérdida, que dice que tan mal están los resultados de la red en cada vuelta que dio.
+                </span>
+
+            </div>
+            <img src="sources/imgSevenStep.png">
+            <br><br>
+            <img src="sources/imgGraphicSeven.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 8.</h3>
+                    Se imprime una predicción.
+                </span>
+                
+            </div>
+            <img src="sources/imgEightStep.png">
+        </section>
+
+        <section id="contenedor">
+            <div class="text-container-info">
+                <span><h3 class="title-inside">Paso 9.</h3>
+                    Para ver la estructura interna de la red, es decir que datos se asignaron después del entrenamiento al peso y el sesgo. se usa la función capa.get_weights para que se imprima los valores
+                </span>
+                <ul>
+                    <li>El peso es el primer array</li>
+                    <li>El sesgo es el segundo array</li>
+                </ul>
+            </div>
+            <img src="sources/imgNineStep.png">
+            <img src="sources/finalResult.png">
+            <div class="text-container-info">
+                <span>En este caso se ha creado una red neuronal con un solo eslabón que intenta descifrar el comportamiento de una función lineal , de tal manera que el peso del modelo representa la pendiente de la función aproximada y el sesgo su punto de corte. 
+                </span>
+            </div>
+        </section>
+
+        <section id="contenedor">
+            <h3 class="title-inside">Fuentes</h3>
+            <ul>
+                <li><a class="link-fuente" href="https://aprendeia.com/que-son-las-redes-neuronales-artificiales/">https://aprendeia.com/que-son-las-redes-neuronales-artificiales/</a></li>
+                <li><a class="link-fuente" href="https://aprendeia.com/libreria-scikit-learn-de-python/">https://aprendeia.com/libreria-scikit-learn-de-python/</a></li>
+                <li><a class="link-fuente" href="https://www.youtube.com/watch?v=iX_on3VxZzk">Tu primera red neuronal en Python y Tensorflow. (2021, July 7). [Video]. YouTube.</a></li>
+            </ul>
+            
+            
+
+        </section>
   	</div>
 
 </body>

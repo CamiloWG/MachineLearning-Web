@@ -434,3 +434,11 @@ a {
 .bar-container {
   padding: 15px;
 }
+
+.text-container-info {
+  margin: 30px 10px;
+}
+
+.link-fuente {
+  color: white;
+}
