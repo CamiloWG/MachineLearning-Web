@@ -42,7 +42,26 @@ h1{
   text-fill-color: transparent;
   color: transparent;
 }
+h2{
+  padding-top: 8px;
+}
+p{
+  padding: 16px;
+}
 
+.texto1{
+	width: 40%;
+  margin: 20px;
+  padding: 10px;
+  float: left;
+}
+.img{
+  width: 30%;
+  text-align: right;
+}
+.listred ul{
+  text-align: justify;
+}
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked){
   position: absolute;
